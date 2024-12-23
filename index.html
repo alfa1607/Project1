@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="face-api.js"></script>
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            background-image: url('images/fondo novo 3.jpg'); /* Ruta a la imagen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+        .hidden {
+            display: none;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        form {
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        form input, form button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+        video {
+            display: block;
+            margin-top: 20px;
+            border: 1px solid black;
+        }
+    </style>
+    <title>FaceTao</title>
+</head>
+<body>
+    <!-- Icono de usuario -->
+<i class="fa-solid fa-user"></i>
+
+    <!-- Menú inicial -->
+    <div class="menu" id="menu">
+        
+        <h1>Bienvenido a FaceTao</h1>
+        <button id="registerOption">Registrar Usuario</button>
+        <button id="loginOption">Iniciar Sesión</button>
+        <button id="userActionsBtn">Acciones de Usuario</button>
+    </div>
+
+<!-- Sección de acciones de usuario -->
+<div id="userActionsSection" class="hidden">
+    <h3>Acciones de Usuario</h3>
+    <input type="text" id="deleteUsername" placeholder="Nombre del usuario a eliminar" />
+    <button id="deleteUserBtn">Eliminar Usuario</button>
+    <button id="clearAllUsersBtn">Eliminar Todos los Usuarios</button>
+    <button id="showUsersBtn">Mostrar Usuarios</button>
+    <button id="backToMenuFromActions">Regresar al Menú</button>
+</div>
+
+   <!-- Formulario de registro -->
+<form id="registerForm" class="hidden">
+    <h3>Registrar Usuario</h3>
+    <input type="text" id="registerUsername" style="width: 300px"; placeholder="Introducir Codigo del empleado" required />
+    <button type="button" id="registerBtn">Confirmar</button>
+    <video id="videoRegister" width="400" height="300" autoplay muted></video>
+    <button type="button" id="backToMenuFromRegister">Regresar al Menú</button>
+</form>
+
+<!-- Formulario de inicio de sesión -->
+<form id="loginForm" class="hidden">
+    <h3>Iniciar Sesión</h3>
+    <input type="text" id="loginUsername" style="width: 300px" placeholder="Codigo" required />
+    <video id="videoLogin" width="400" height="300" autoplay muted></video>
+    <button type="button" id="loginBtnEntry">Marcar entrada</button>
+    <button type="button" id="loginBtnExit">Marcar salida</button>
+    <button type="button" id="backToMenuFromLogin">Regresar al Menú</button>
+</form>
+
+    <script src="scrip.js"></script>
+</body>
+</html>
+
+
